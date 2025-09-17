@@ -49,7 +49,7 @@ if __name__ == "__main__":
     car1.sell()
     car2.sell()
     
-    # Check the sale price after s4
-    elling
+    # Check the sale price after selling
+  
     print(f"Car1 sale price after sale: ${car1.get_sale_price()}")
     print(f"Car2 sale price after sale: ${car2.get_sale_price()}")   
