@@ -1,0 +1,55 @@
+class Car:
+    """A class to represent a car in a dealership inventory system."""
+    
+    def __init__(self, make, model, year, color, mileage, price):
+        """Initialize the car's attributes."""
+        self.make = make
+        self.model = model
+        self.year = year
+        self.color = color
+        self.mileage = mileage
+        self.price = price
+        self.sold = False  # Track if the car has been sold
+    
+    def get_description(self):
+        """Return a formatted string describing the car."""
+        return f"{self.year} {self.make} {self.model} - {self.color}, {self.mileage} miles >>> ${self.price}"
+    
+    def sell(self):
+        """Mark the car as sold and update its sale price."""
+        if self.sold:
+            print("This item has been sold")
+        else:
+            self.sold = True
+            print(f"Car sold: {self.get_description()}")
+    
+    def get_sale_price(self):
+        """Return the current sale price. Returns 0.0 if sold."""
+        if self.sold:
+            return 0.0
+        return self.price
+    
+    def get_purchase_price(self):
+        """Return the purchase price based on a flat rate and mileage discount."""
+        flat_rate = 7500  # Flat rate for cars
+        return flat_rate - (0.10 * self.mileage)
+
+
+# Example usage of the Car class to display different car models
+if __name__ == "__main__":
+    # Create instances of Car for different models
+    car1 = Car("Mazda", "CX5", 2017, "Red", 12000, 16000)
+    car2 = Car("Ford", "Engine", 1987, "Blue", 15000, 32000)
+    
+    # Display the initial descriptions
+    print(car1.get_description())
+    print(car2.get_description())
+    
+    # Simulate selling the cars
+    car1.sell()
+    car2.sell()
+    
+    # Check the sale price after s4
+    elling
+    print(f"Car1 sale price after sale: ${car1.get_sale_price()}")
+    print(f"Car2 sale price after sale: ${car2.get_sale_price()}")   
